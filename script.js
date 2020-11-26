@@ -1,5 +1,6 @@
 "use strict";
-// let num = 266219;
+/* ==LESSON 2==
+ let num = 266219;
 
 // function multOfNumbers(number) {
 //   let string = String(number);
@@ -14,6 +15,11 @@
 //   console.log(num2);
 //   alert(String(num2).substring(0, 2));
 // }
+ multOfNumbers(num);
+ */
+
+
+/* ==LESSON 3==
 let ruWeek = [
   "Понедельник",
   "Вторник",
@@ -76,4 +82,20 @@ languageIf("en", ruWeek, engWeek);
 languageSwitch("ru", ruWeek, engWeek);
 languageArr("ru", ruWeek, engWeek);
 consol();
-// multOfNumbers(num);
+*/
+
+
+/* ==LESSON 4==
+*/
+function getString(string) {
+  if(typeof(string)!=='string'){
+    return 'Это не строка';
+  }else{
+    let line = string.trim();
+    return line.length > 50 ? line.slice(0, 50) + '...' : line;
+  }
+}
+
+console.log(getString(11));
+console.log(getString('      1234          '));
+console.log(getString('Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut aut necessitatibus excepturi odio nobis eum quibusdam eligendi magnam aliquam accusamus ducimus ex veniam harum consectetur, hic enim animi! Iusto dolor nulla numquam nobis, laborum dolorem autem veniam tenetur explicabo. Voluptate, inventore distinctio? Dolorum, delectus quas. Dolor sed molestias praesentium doloribus harum, ratione consequuntur adipisci ducimus nemo perferendis! Eveniet, nihil voluptates!'));
