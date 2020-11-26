@@ -92,7 +92,7 @@ function getString(string) {
     return 'Это не строка';
   }else{
     let line = string.trim();
-    return line.length > 50 ? line.slice(0, 50) + '...' : line;
+    return line.length > 30 ? line.slice(0, 30) + '...' : line;
   }
 }
 
