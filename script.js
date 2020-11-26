@@ -61,8 +61,19 @@ function languageArr(lang, ruWeek, engWeek) {
   };
   console.log(week[lang]);
 }
+function consol() {
+  let namePerson = "Артём";
+  let consolName =
+    namePerson === "Артём"
+      ? "директор"
+      : namePerson === "Максим"
+      ? "преподаватель"
+      : "студент";
+  console.log(consolName);
+}
 
 languageIf("en", ruWeek, engWeek);
 languageSwitch("ru", ruWeek, engWeek);
 languageArr("ru", ruWeek, engWeek);
+consol();
 // multOfNumbers(num);
