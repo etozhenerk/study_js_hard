@@ -1,31 +1,24 @@
-"use strict";
+'use strict';
 
-let arr = [
-  "13143141",
-  "213141423",
-  "42343123",
-  "123412",
-  "14124214",
-  "4124121",
-  "1421423142",
+let week = [
+  "Понедельник",
+  "Вторник",
+  "Среда",
+  "Четверг",
+  "Пятница",
+  "Суббота",
+  "Воскресенье",
 ];
-arr.forEach(function (item, i) {
-  if (item[0] == 2 || item[0] == 4) {
-    console.log(item);
+
+let now = new Date().getDay();
+week.forEach(function(item, i){
+  if(i === (now-1)){
+    document.querySelector('.week').innerHTML += `<b>${item}</b><br>`;
+  }else if(i === 5 || i ===6){
+    document.querySelector('.week').innerHTML += `<i>${item}</i><br>`;
+  }else{
+    document.querySelector('.week').innerHTML += `${item}<br>`;
   }
+
+  
 });
-
-function isNatural(number) {
-  for (var i = 2; i <= number / 2; i++) {
-    if (number % i == 0) {
-      return false;
-    }
-  }
-  return true;
-}
-
-for (let i = 1; i <= 100; i++) {
-  if (isNatural(i)) {
-    console.log(`Число ${i}, делители этого числа 1 и ${i}`);
-  }
-}
