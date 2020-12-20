@@ -1,14 +1,21 @@
 "use strict";
 
-const body = document.querySelector('body'),
-  color = document.querySelector('#color'),
-  button = document.querySelector('#change');
+const input = document.querySelector("input"),
+  p = document.querySelector("p");
 
-const changeColor = () => {
-  let randomColor =`#${Math.random().toString(16).slice(2,8)}` ;
-  body.style.background = randomColor;
-  color.textContent = randomColor;
-  button.style.color = randomColor;
+function debounce(callBack, time) {
+  return function () {
+    let previousCall = this.lastCall;
+    this.lastCall = Date.now();
+    if (previousCall && this.lastCall - previousCall <= time) {
+      clearTimeout(this.lastCallTimer);
+    }
+    this.lastCallTimer = setTimeout(() => callBack(), time);
+  };
+}
+
+let addText = () => {
+  p.textContent = input.value;
 };
 
-button.addEventListener('click', changeColor);
+input.addEventListener("input", debounce(addText, 300));
